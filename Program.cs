@@ -5,26 +5,29 @@ using System.Text;
 
 namespace Projecteuler
 {
-    class Fibonacci
+    class Program
     {
         static void Main(string[] args)
         {
-            long last = 0;
-            long result = 1;
-
-            for (int i = 0; last <= 4000000; i++)
-            {
-                last = recFib(i);
-                Console.WriteLine(last);
-                if (last % 2 == 0) result += last;
-            }
-            Console.WriteLine("Result: {0}",result - 1);
+            long dicks = factors(600851475143);
+            Console.WriteLine(dicks);
             Console.ReadKey();
         }
-        static long recFib(int n)
+        static long factors(long n)
         {
-            if (n < 2) return n;
-            return recFib(n - 1) + recFib(n - 2);
+            long z = 2;
+            while (z * z <= n)
+            {
+                if (n % z == 0)
+                {
+                    Console.WriteLine( z);
+                    n /= z;
+                }
+
+                else
+                    z++;
+            }
+            return n;
         }
     }
 }
