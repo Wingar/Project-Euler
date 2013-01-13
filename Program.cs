@@ -8,7 +8,6 @@ namespace Projecteuler
 {
     class Program
     {
-        [STAThread]
         static void Main(string[] args)
         {
             Console.WriteLine("Press any key to start!");
