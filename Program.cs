@@ -12,14 +12,18 @@ namespace Projecteuler
             Console.WriteLine("Press any key to start!");
             Console.ReadKey();
             Console.WriteLine("Mathemating...");
-            int i = 20;
+            double sumsquare = 0; // The sum of every squared number from 1-100
+            for (int i = 0; i <= 100; i++)
+                sumsquare += Math.Pow(i, 2); // Continue to add the squared result.
 
-            while (i % 2 != 0 || i % 3 != 0 || i % 4 != 0 || i % 5 != 0 ||i % 6 != 0 || i % 7 != 0 || i % 8 != 0 || i % 9 != 0 || i % 10 != 0 || i % 11 != 0 || i % 12 != 0 || i % 13 != 0 || i % 14 != 0 || i % 15 != 0 || i % 16 != 0 || i % 17 != 0 || i % 18 != 0 || i % 19 != 0 || i % 20 != 0)
-            {
-                i++;
-            }
+            double squaresum = 0; // The sum of every number from 1-100, then squared
+            for (int i = 0; i <= 100; i++)
+                squaresum += i;
+            squaresum = Math.Pow(squaresum, 2); // Square the result.
 
-            Console.WriteLine("Result: {0}", i); // Print Result!
+            double result = squaresum - sumsquare; // Calculate the difference
+
+            Console.WriteLine("Result: {0}", result);
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
         }
